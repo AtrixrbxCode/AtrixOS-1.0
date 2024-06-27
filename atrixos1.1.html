@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern App with Random Facts</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  .container {
+    text-align: center;
+    margin: 20px;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+</style>
+<script>
+// Array of random facts
+var facts = [
+  "Honey never spoils.",
+  "Octopuses have three hearts.",
+  "Bananas are berries, but strawberries aren't.",
+  "The Eiffel Tower can be 15 cm taller during the summer.",
+  "Cats have fewer toes on their back paws.",
+  "A group of flamingos is called a flamboyance."
+];
+
+function showRandomFact() {
+  // Get a random fact
+  var randomFact = facts[Math.floor(Math.random() * facts.length)];
+  // Display the random fact
+  document.getElementById('fact-display').textContent = randomFact;
+}
+
+// Placeholder functions for calculator and text editor
+function calculate() {
+  // Calculator functionality
+}
+
+function saveText() {
+  // Save text functionality
+}
+
+function loadText() {
+  // Load text functionality
+}
+
+// Initialize score variable
+var score = 0;
+
+function incrementScore() {
+  // Increment the score
+  score++;
+  // Update the score display
+  document.getElementById('score-display').textContent = score;
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Random Fact Section -->
+  <div id="random-fact">
+    <button onclick="showRandomFact()">Show Random Fact</button>
+    <p id="fact-display">Click the button to see a random fact!</p>
+  </div>
+
+  <!-- Calculator Section -->
+  <div id="calculator">
+    <!-- Calculator UI goes here -->
+  </div>
+
+  <!-- Text Editor Section -->
+  <div id="text-editor">
+    <textarea id="text-area"></textarea>
+    <button onclick="saveText()">Save</button>
+    <button onclick="loadText()">Load</button>
+  </div>
+
+  <!-- Score Counter Section -->
+  <div id="score-counter">
+    <span id="score-display">0</span>
+    <button onclick="incrementScore()">Increase Score</button>
+  </div>
+</div>
+
+</body>
+</html>
